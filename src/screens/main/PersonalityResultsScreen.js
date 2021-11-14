@@ -1,22 +1,33 @@
 import React, {useState} from "react";
 import { Text, StyleSheet, TouchableOpacity, View, ScrollView } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-
+import PersonalityHeader from '../../components/Header';
 
 const PersonalityResultsScreen = () => {
     const [category, setCategory] = useState('Debt');
     const navigation=useNavigation();
     return <View style={styles.screen}>
-        <Text> This is your Personality Results Screen! </Text>
+       <PersonalityHeader pageTitle="Personality"></PersonalityHeader>
     </View>
 };
 
 const styles = StyleSheet.create({
-   screen: {
+    screen: {
+        justifyContent: 'flex-start',
+
+        flex:1,
+        backgroundColor: "#FFFFFF",
+    },
+        headerContent: {
             justifyContent: 'center',
             alignItems: 'center',
-            flex:1,
-        }
+            backgroundColor: '#B0CBAC',
+            width: '100%',
+            height: 120,
+            borderBottomLeftRadius: 15,
+            borderBottomRightRadius: 15,
+            marginBottom: 20,
+        },
 });
 
-export default PersonalityResultscreen;
+export default PersonalityResultsScreen;
